@@ -1,9 +1,10 @@
 #!/bin/bash -e
 
-if [ "$1"=="" ]; then
+if [ "$1" == "" ]; then
 	echo "Need to specify user/reviwer" 1>&2;
 	exit 1;
 fi
-gi push
-gi pull-request 2>/dev/null
-gi comment "@$1 Please review"
+if ! (gi push 2>&1 | grep 'Everything up-to-date'); then
+	gi comment "@$1 Please review"
+	gi pull-request 2>/dev/null
+fi
