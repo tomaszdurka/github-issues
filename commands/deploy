@@ -1,0 +1,9 @@
+#!/bin/bash -e
+
+if [ `uname` == 'Darwin' ]; then
+	script=$(greadlink -f "$0")
+else
+	script=$(readlink -f "$0")
+fi
+script=$(dirname $script)/../bin/gi
+ln -sf $script /usr/local/bin/gi

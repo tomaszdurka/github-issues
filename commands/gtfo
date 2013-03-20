@@ -1,0 +1,9 @@
+#!/bin/bash -e
+
+if [ "$1"=="" ]; then
+	echo "Need to specify user/reviwer" 1>&2;
+	exit 1;
+fi
+gi push
+gi pull-request 2>/dev/null
+gi comment "@$1 Please review"

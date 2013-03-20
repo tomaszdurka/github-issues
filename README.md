@@ -26,6 +26,7 @@ usage: gi <command>
 
 Commands:
   list [<username>|me]      Lists repo's issues (assigned to user if provided)
+  reviews                   Lists all my outstanding reviews (mentions)
   open [<message>]          Open a new issue
   checkout <issue-number>   Check out branch for specified issue, create it if needed
   details                   Show current branch-issue's details
@@ -33,6 +34,7 @@ Commands:
   comment [<message>]       Add comment to current branch-issue
   push                      Push current branch-issue to origin
   pull-request [<target>]   Create a pull-request with the current branch-issue
+  gtfo [<username>]         Push, pull-request, add review comment
 ```
 
 
